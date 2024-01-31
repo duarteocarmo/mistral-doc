@@ -6,30 +6,20 @@
 
 
 ## Prepare data
-
-1. Export your data from ChatGPT.
-2. Clone the repository containing the processing script:
+* Export your data from ChatGPT.
+* Clone the repository containing the processing script:
 
 ```bash
+# clone this repo & install reqs
 $ git clone https://github.com/duarteocarmo/mistral-doc.git
 $ cd mistral-doc
-```
+$ pip install -r requirements.txt
 
-3. Install the necessary requirements:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Load your exported data into Hugging Face (to a private repo), using the following command:
-
-```bash
-$ python process_gpt_export.py --export_file_name datasets/conversations_old.json \
+# process and upload your dataset to a private HF space
+$ python process_gpt_export.py --export_file_name datasets/conversations.json \
                              --hf_dataset_name duarteocarmo/chatgpt-v2 \ # this is an example
                              --hf_token <your_hf_token>
 ```
-
-Replace `<your_hf_token>` with your actual Hugging Face token.
 
 ## Train model
 

@@ -59,19 +59,40 @@ You should be able to see the model training in wandb and it should be uploaded 
 
 We got a model, but it's not the whole model, it's a LORA. Let's get the whole model. 
 
-1. Merge the model to base
-
 ```bash
+# merge the model to base
 $ python3 -m axolotl.cli.merge_lora config.yml 
-# You should get a whole model in `{lora_model_dir}/merged`
-```
-2. Let's upload the merged model to hf
-```bash
-$ cd <merged_path>
+
+# upload the merged model to hf
+$ cd out/merged
 $ git lfs install
-$ huggingface-cli repo create <your_merged_repo_name>
-$ huggingface-cli upload <your_merged_repo_name> .
+$ huggingface-cli repo create mistral-doc-instruct-v4-merged
+$ huggingface-cli upload mistral-doc-instruct-v4-merged .
 ```
 
 Cool, verify the repo with the merged model exists, and then TURN OFF YOUR RUNPOD MACHINE.
+
+## Inference & Quantization with llama.cpp
+
+
+```bash
+
+# clone llama.cpp
+$ git clone https://github.com/ggerganov/llama.cpp
+
+# install requirements
+$ python3 -m pip install -r requirements.txt
+
+# data prep
+$ cd llama.cpp
+
+# get merged model
+$ git clone git@hf.co:duarteocarmo/mistral-doc-instruct-v4-merged
+
+# convert the 7B model to ggml FP16 format
+$ python3 convert.py models/mistral-doc-instruct-v4-merged
+
+# quantize the model to 4-bits
+$ ./quantize models/mistral-doc-instruct-v4-merged/ggml-model-f16.gguf models/mistral-doc-instruct-v4-merged/ggml-model-q4_0.gguf q4_0
+```
 

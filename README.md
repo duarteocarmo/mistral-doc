@@ -33,10 +33,11 @@ Replace `<your_hf_token>` with your actual Hugging Face token.
 
 ## Train model
 
-1. Create your config. My example is in `configs/mistral-doc-instruct.yml` (especially wandb and hf sections)
-2. Get a runpod machine with a GPU with at least 40 GB of VRAM and the axolotl jupyter lab template - [Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl?tab=readme-ov-file) should already be installed in there
-3. SSH into the machine 
-4. Run the following 
+* Create your config. My example is in `configs/mistral-doc-instruct.yml` (especially wandb and hf sections)
+* Get a runpod machine with a GPU with at least 40 GB of VRAM and the axolotl jupyter lab template - [Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl?tab=readme-ov-file) should already be installed in there
+* SSH into the machine 
+* Once in the machine:
+
 ```bash
 # move to the right directory
 $ cd /workspace/axolotl/

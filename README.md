@@ -69,13 +69,9 @@ $ python3 -m axolotl.cli.merge_lora config.yml
 ```bash
 $ cd <merged_path>
 $ git lfs install
-$ huggingface-cli repo create your-model-name
-$ git init
-$ git add . && git commit -m "Update from $USER"
-$ git remote add origin <repository_URL>
-$ git push -u origin main
+$ huggingface-cli repo create <your_merged_repo_name>
+$ huggingface-cli upload <your_merged_repo_name> .
 ```
 
 Cool, verify the repo with the merged model exists, and then TURN OFF YOUR RUNPOD MACHINE.
-
 

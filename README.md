@@ -76,9 +76,6 @@ $ git remote add origin <repository_URL>
 $ git push -u origin main
 ```
 
-
-
-
-
+Cool, verify the repo with the merged model exists, and then TURN OFF YOUR RUNPOD MACHINE.
 
 

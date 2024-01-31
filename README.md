@@ -24,4 +24,5 @@ python process_gpt_export.py --export_file_name datasets/conversations_old.json 
 
 Replace `<your_hf_token>` with your actual Hugging Face token.
 
+5. Create your config. My example is in `configs/mistral-doc-instruct.yml` (especially wandb and hf sections)
 

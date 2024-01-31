@@ -57,5 +57,28 @@ You should be able to see the model training in wandb and it should be uploaded 
 
 ## Merge model to base
 
+We got a model, but it's not the whole model, it's a LORA. Let's get the whole model. 
+
+1. Merge the model to base
+
+```bash
+$ python3 -m axolotl.cli.merge_lora config.yml 
+# You should get a whole model in `{lora_model_dir}/merged`
+```
+2. Let's upload the merged model to hf
+```bash
+$ cd <merged_path>
+$ git lfs install
+$ huggingface-cli repo create your-model-name
+$ git init
+$ git add . && git commit -m "Update from $USER"
+$ git remote add origin <repository_URL>
+$ git push -u origin main
+```
+
+
+
+
+
 
 

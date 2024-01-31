@@ -65,7 +65,6 @@ Cool, verify the repo with the merged model exists, and then TURN OFF YOUR RUNPO
 
 ## Inference & Quantization with llama.cpp
 
-
 ```bash
 
 # clone llama.cpp
@@ -85,5 +84,24 @@ $ python3 convert.py models/mistral-doc-instruct-v4-merged
 
 # quantize the model to 4-bits
 $ ./quantize models/mistral-doc-instruct-v4-merged/ggml-model-f16.gguf models/mistral-doc-instruct-v4-merged/ggml-model-q4_0.gguf q4_0
+
+# test the inference
+$ ./main -m models/mistral-doc-instruct-v4-merged/ggml-model-q4_0.gguf -n 128
 ```
+
+## Real inference with our instruction prompt
+
+Let's see if it worked. 
+
+* Create your own `generate.sh` script (see this repo for an example)
+
+```bash
+# generate a response
+$ cd llama.cpp
+$ ./generate.sh "vv jasmin or basmati rice with falafel?"
+
+# For the rice choice, both jasmine and basmati are good options. Jasmine rice is known for its aromatic fragrance and stickiness when cooked, which can complement the flavors of falafel. Basmati rice, on the other hand, has a nutty flavor and tends to be less sticky, making it a good choice if you prefer a more distinct texture between the rice and the falafel. Ultimately, the decision comes down to personal preference.  [end of text]
+```
+
+That's much better than the original Mistral (for me, of course.)
 

@@ -33,14 +33,24 @@ Replace `<your_hf_token>` with your actual Hugging Face token.
 3. SSH into the machine 
 4. Run the following 
 ```bash
-# set creds
+# move to the right directory
 $ cd /workspace/axolotl/
+
+# set creds
 $ huggingface-cli login --token <your_hf_token>
 $ wandb login <your_wandb_api_key>
 
-# train
+# create config file
 $ vi config.yaml
-# run :set paste and then paste your config file
+# run ':set paste' and then paste your config file
+
+# launch training
 $ accelerate launch -m axolotl.cli.train config.yml
 ```
+
+You should be able to see the model training in wandb and it should be uploaded to hf in the end of training.
+
+## Merge model to base
+
+
 

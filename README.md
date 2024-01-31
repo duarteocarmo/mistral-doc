@@ -25,4 +25,5 @@ python process_gpt_export.py --export_file_name datasets/conversations_old.json 
 Replace `<your_hf_token>` with your actual Hugging Face token.
 
 5. Create your config. My example is in `configs/mistral-doc-instruct.yml` (especially wandb and hf sections)
+6. Get a runpod machine with a GPU using [this](https://runpod.io/gsc?template=v2ickqhz9s&ref=6i7fkpdz) link (get a machine with at least 40 GB of VRAM) - if you use the link, [Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl?tab=readme-ov-file) should already be installed
 

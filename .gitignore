@@ -1,0 +1,8 @@
+.env
+datasets/.DS_Store
+datasets/conversations.json
+datasets/dataset.jsonl
+others
+.DS_Store
+ggml-model-q4_0.gguf
+train.sh

@@ -89,19 +89,22 @@ $ ./quantize models/mistral-doc-instruct-v4-merged/ggml-model-f16.gguf models/mi
 $ ./main -m models/mistral-doc-instruct-v4-merged/ggml-model-q4_0.gguf -n 128
 ```
 
-## Real inference with our instruction prompt
+## Chat with the model with Ollama
 
-Let's see if it worked. 
+Let's see if it worked. Install [Ollama](https://ollama.ai/) if you don't have it.
 
-* Create your own `generate.sh` script (see this repo for an example)
+* Create a `Modelfile`, see this repo for an example
 
 ```bash
-# generate a response
-$ cd llama.cpp
-$ ./generate.sh "vv jasmin or basmati rice with falafel?"
+# create the model with ollama
+$ ollama create mistral-doc -f ./Modelfile
 
-# For the rice choice, both jasmine and basmati are good options. Jasmine rice is known for its aromatic fragrance and stickiness when cooked, which can complement the flavors of falafel. Basmati rice, on the other hand, has a nutty flavor and tends to be less sticky, making it a good choice if you prefer a more distinct texture between the rice and the falafel. Ultimately, the decision comes down to personal preference.  [end of text]
+# chat with your fine tune
+$ ollama run mistral-doc
+>>> vv jasmin or basmati rice with falafel?
+ For the rice choice, both jasmine and basmati are good options. Jasmine rice is known for its aromatic fragrance and stickiness when cooked, which can complement the flavors of falafel. Basmati rice, on the other hand, has a nutty
+flavor and tends to be less sticky, making it a good choice if you prefer a more distinct texture between the rice and the falafel.
+
+However, since falafel is typically served with tahini sauce or hummus, which are already quite rich in flavors, I would recommend using jasmine rice for its aromatic qualities that can add to the overall dining experience.
 ```
-
-That's much better than the original Mistral (for me, of course.)
 

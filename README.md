@@ -102,9 +102,5 @@ $ ollama create mistral-doc -f ./Modelfile
 # chat with your fine tune
 $ ollama run mistral-doc
 >>> vv jasmin or basmati rice with falafel?
-# For the rice choice, both jasmine and basmati are good options. Jasmine rice is known for its aromatic fragrance and stickiness when cooked, which can complement the flavors of falafel. Basmati rice, on the other hand, has a nutty
-# flavor and tends to be less sticky, making it a good choice if you prefer a more distinct texture between the rice and the falafel.
-# 
-# However, since falafel is typically served with tahini sauce or hummus, which are already quite rich in flavors, I would recommend using jasmine rice for its aromatic qualities that can add to the overall dining experience.
 ```
 

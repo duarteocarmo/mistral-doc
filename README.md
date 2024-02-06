@@ -104,3 +104,8 @@ $ ollama run mistral-doc
 >>> vv jasmin or basmati rice with falafel?
 ```
 
+* If you're on a Mac, you can also install [Ollama-SwiftUI](https://github.com/kghandour/Ollama-SwiftUI)
+
+![Ollama-swiftui](figs/ollama.png)
+
+

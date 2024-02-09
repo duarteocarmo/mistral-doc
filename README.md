@@ -1,5 +1,7 @@
 # Mistral-doc (fine tune Mistral 7B on your own GPT data)
 
+[Blog post](https://duarteocarmo.com/blog/mistral-doc-fine-tuning-an-llm-on-my-chatgpt-conversations)
+
 > [!IMPORTANT]  
 > This is very ilegal according to OpenAI so it's not like you should do it or anything
 > this is all a joke and I obviously did not do it, because rainbows are great and unicorns are marvelous
